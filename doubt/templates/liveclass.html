@@ -1,0 +1,40 @@
+{% extends 'basic.html' %}
+
+{% block body %}
+
+<div class="container my-3">
+    <h4>Please fill the form for Registring Live Class</h4>
+    <form method="post" action="/home/liveclass/" >
+        {% csrf_token %} 
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" name="name" aria-describedby="name">
+        </div>
+        <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+        <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="phone" class="form-control" id="phone" name="phone" aria-describedby="phoneHelp">
+            <small id="phoneHelp" class="form-text text-muted">We'll never share your phone number with anyone else.</small>
+        </div>
+        <div class="form-group">
+            <label for="std">Class</label>
+            <select class="form-control" id="std">
+              <option value="IX">IX</option>
+              <option value="X">X</option>
+              <option value="XI">XI</option>
+              <option value="XII">XII</option>
+            </select>
+          </div>
+        <div class="form-group">
+            <label for="subject">Subject Name</label>
+            <input type="text" class="form-control" id="subject" name="subject" aria-describedby="subject">
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+{%endblock %}

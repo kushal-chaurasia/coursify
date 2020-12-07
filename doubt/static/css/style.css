@@ -1,0 +1,11 @@
+#heading{
+    font-size: xx-large;
+    font-weight: 900;
+    padding-left: 2em;
+    padding-right: .3em;
+    padding-top: 2em;
+}
+
+.first {
+    display: flex;
+}

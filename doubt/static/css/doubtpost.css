@@ -1,0 +1,15 @@
+.name{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: blueviolet;
+    text-decoration: underline;
+    font-size: large;
+}
+.title{
+    font-size: x-large;
+    font-weight: bolder;
+
+}
+.date{
+    font-size: x-small;
+    text-align: end;
+}
