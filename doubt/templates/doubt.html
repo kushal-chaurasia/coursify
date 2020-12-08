@@ -5,8 +5,33 @@
 
 
 <div class="container mt-3">
-  <div class="row my-2">
-{% for item in myDoubts %}
+
+  <h3>Post Your Doubts Here</h3>
+
+  <form method="post" action="/home/doubt/">
+    {% csrf_token %} 
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" name = "name"  id="name" >
+    </div>
+    <div class="form-group">
+      <label for="title">Enter your topic</label>
+      <input type="text" class="form-control" name = "title"  id="title" >
+    </div>
+    
+    
+    
+    <div class="form-group">
+      <label for = "content">Query</label>
+      <textarea class="form-control" name="content" id = "content" rows="3"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>  
+  </form>
+
+
+<hr>
+  <div class="row my-4">
+    {% for item in myDoubts %}
 
     <div class="col-md-6">
       <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
@@ -21,12 +46,14 @@
       </div>
     </div>
     {% if forloop.counter|divisibleby:2 %}
-  </div><div class="row my-2">
+  </div>
+  <div class="row my-2">
     {% endif %}
 
-  {% endfor %}
+    {% endfor %}
+
+  </div>
+
+
+  {% endblock %}
   
-</div>
-
-
-{% endblock %}

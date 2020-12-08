@@ -13,6 +13,65 @@
           </div>
          <center> <img class=" my-3" src="{% static 'images/second.png'%}" alt=""></center>
       </div>
+
+    <hr> <br>
+    <center><h3>Subjects</h3></center> <br>
+    <div id="demo" class="carousel slide my-3" data-ride="carousel">
+        <ul class="carousel-indicators">
+          <li data-target="#demo" data-slide-to="0" class="active"></li>
+    
+           {% for i in range %}
+          <li data-target="#demo" data-slide-to="{{i}}" ></li>
+          {% endfor %}
+        </ul>
+    
+        <!--Slideshow starts here -->
+        <div class="container carousel-inner no-padding">
+    
+          <div class="carousel-item active">
+            <div class="col-xs-3 col-sm-3 col-md-3">
+              <div class="card" style="width: 18rem;">
+                <img src='/media/{{subject.0.image}}' class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{subject.0.name}}</h5>
+                    <p class="card-text">{{subject.0.description}}</p>
+                    <a href="#" class="btn btn-primary">Click here to go</a>
+                </div>
+              </div>
+           </div>
+    
+    
+            {% for i in subject|slice:"1:"%}
+            <div class="col-xs-3 col-sm-3 col-md-3">
+              <div class="card" style="width: 18rem;">
+                <img src='/media/{{i.image}}' class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">{{i.name}}</h5>
+                  <p class="card-text">{{i.description}}</p>
+                  <a href="#" class="btn btn-primary">Click here to go</a>
+                </div>
+              </div>
+            </div>
+            {% if forloop.counter|divisibleby:3 and forloop.counter > 0 and not forloop.last %}
+          </div><div class="carousel-item">
+            {% endif %}
+    
+            {% endfor %}
+        </div>
+    
+    
+    
+    </div>
+    </div>
+        <!-- left and right controls for the slide -->
+        <a class="carousel-control-prev" href="#demo{{forloop.counter}}" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#demo{{forloop.counter}}" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </a>
+    
+    
 {% endblock %}     
       
          

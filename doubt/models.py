@@ -6,6 +6,7 @@ class DoubtQuestion(models.Model):
     name = models.CharField(max_length=50)
     title = models.CharField(max_length=250)
     content = models.CharField(max_length=5000)
+    image = models.ImageField(upload_to='doubt/post', default ="" )
     date = models.DateField()
     
 
@@ -33,3 +34,13 @@ class LiveClass(models.Model):
 
     def __str__(self):
         return self.name
+
+class Subject(models.Model):
+    name = models.CharField(max_length=50, default="")
+    description = models.CharField(max_length=250, default="")
+    stream = models.CharField(max_length=50, default="")
+    image = models.ImageField(upload_to='doubt/images', default ="" )
+
+    def __str__(self):
+        return self.name
+        
