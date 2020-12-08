@@ -1,0 +1,1 @@
+web: gunicorn coursify.wsgi --log-file-
